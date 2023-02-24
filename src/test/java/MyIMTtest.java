@@ -7,7 +7,7 @@ public class MyIMTtest {
     {
         var actualResult = getIMTResult(180f, 75f);
         Assert.assertEquals("нормальной массе тела", actualResult);
-        testNormalWeight(test);
+        getClass(double)
     }
     private String getIMTResult(Float heightCm, Float weightKg)
 
