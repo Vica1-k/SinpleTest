@@ -7,8 +7,43 @@ public class MyIMTtest {
     {
         var actualResult = getIMTResult(180f, 75f);
         Assert.assertEquals("нормальной массе тела", actualResult);
-        getClass(double) equals()
+
     }
+    @Test
+    public void testZeroHeight ()
+    {
+        var actualResult = getIMTResult(0f,45f);
+        Assert.assertEquals("некорректный рост", actualResult);
+    }
+    @Test
+    public void testZeroWeight ()
+    {
+        var actualResult = getIMTResult(100f,0f);
+        Assert.assertEquals("некорректный вес",actualResult);
+    }
+    @Test
+    public void testWeightDeficit ()
+    {
+        var actualResult = getIMTResult(180f,52f);
+        Assert.assertEquals("выраженный дефицит тела", actualResult);
+    }
+
+    @Test
+    public void testInsufficientWeight ()
+    {
+        var actualResult = getIMTResult(180f,55f);
+        Assert.assertEquals("недостаточная масса тела", actualResult);
+    }
+
+    @Test
+    public void testExcessWeight ()
+    {
+        var actualResult = getIMTResult(180f,125f);
+        Assert.assertEquals("избыточная масса тела", actualResult);
+    }
+
+
+
     private String getIMTResult(Float heightCm, Float weightKg)
 
     {
